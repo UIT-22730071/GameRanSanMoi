@@ -32,7 +32,16 @@ public:
     }
 
     void DiChuyen() {
-
+        for (int i = DoDai-1; i>0;i--)
+            A[i] = A[i-1];
+        if (huong==0) A[0].x = A[0].x + 1;
+        if (huong==1) huongA[0].y = A[0].y + 1;
+        if (huong==2) A[0].x = A[0].x - 1;
+        if (huong==3) huongA[0].y = A[0].y - 1;
+        if ((A[0].x == qua.x) && (A[0].y == qua.y)){
+            DoDai++;
+            qua.x = rand()%(MAXX-MINX)+MINX;
+            qua.y = rand()%(MAXY-MINY)+MINY;
     }
 
     void VeKhung() {
